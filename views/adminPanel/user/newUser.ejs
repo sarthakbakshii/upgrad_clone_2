@@ -1,0 +1,102 @@
+<%-include("../component/header",{ title : "add user" , cssLink : "../css/adminPanel.css" }) %>
+<body>
+    <%- include("../component/navbar") %>
+        <div class="navSpacing" style="margin-top: 100px;"></div>
+
+        <div class="displayBox_ad">
+          <form  action="/adminPanel/addCourcer" method="post">
+        
+            <div class="row">
+                <div class="form-floating col-md-12 col-sm-12 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="cource_section" name="cource_section" placeholder="name@example.com">
+                    <label for="cource_section">Enter cource name</label>
+                </div>
+
+                <div class="form-floating col-md-4 col-sm-12 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="hp_institute" name="hp_institute" placeholder="name@example.com">
+                    <label for="hp_institute">Enter institute name</label>
+                </div>
+
+                <div class="form-floating col-md-4 col-sm-12 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="hp_imgUrl" name="hp_imgUrl" placeholder="name@example.com">
+                    <label for="hp_imgUrl">Enter img url for home page</label>
+                </div>
+
+                <div class="form-floating col-md-4 col-sm-12 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="hp_title" name="hp_title" placeholder="name@example.com">
+                    <label for="hp_title">Enter title for home page</label>
+                </div>
+
+                <div class="form-floating col-md-4 col-sm-12 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="hp_duration" name="hp_duration" placeholder="name@example.com">
+                    <label for="hp_duration">Enter duration for home page</label>
+                </div>
+
+                <div class="form-floating col-md-4 col-sm-12 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="hp_promise" name="hp_promise" placeholder="name@example.com">
+                    <label for="hp_promise">Enter promise for home page</label>
+                </div>
+
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="hp_des" name="hp_des" placeholder="name@example.com">
+                    <label for="hp_promise">Enter description  for home page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="prodP_imgUrl" name="prodP_imgUrl" placeholder="name@example.com">
+                    <label for="prodP_imgUrl">Enter img url for product page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="prodP_title" name="prodP_title" placeholder="name@example.com">
+                    <label for="prodP_title">Enter title for product page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="prodP_des_a" name="prodP_des_a" placeholder="name@example.com">
+                    <label for="prodP_des_a">Enter description one for product page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="prodP_des_b" name="prodP_des_b" placeholder="name@example.com">
+                    <label for="prodP_des_b">Enter description two for product page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="prodP_StartsOn" name="prodP_StartsOn" placeholder="name@example.com">
+                    <label for="prodP_StartsOn">Enter starts on date for product page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="gen_title" name="gen_title" placeholder="name@example.com">
+                    <label for="gen_title">Enter title for general page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="gen_des" name="gen_des" placeholder="name@example.com">
+                    <label for="gen_des">Enter description for general page</label>
+                </div>
+                <div class="form-floating col-md-4 mb-3  box-sizing ">
+                    <input type="text" class="form-control" id="gen_emi" name="gen_emi" placeholder="name@example.com">
+                    <label for="gen_emi">Enter emi for general page</label>
+                </div>
+                
+                <button type="submit" id="submitBTN"  class="btn btn-primary col-md-6 m-auto">Sign in</button>
+
+            </div>
+          </form>
+                
+        </div>
+
+      
+</body>
+<script>
+    const submit = document.getElementById("submitBTN");
+
+    // submit.addEventListener("click", () => {
+    //     const fname = document.getElementById("fName").value;
+    //     const lname = document.getElementById("lName").value;
+    //     const email = document.getElementById("email").value;
+    //     const age = document.getElementById("age").value;
+
+    //     let data = { fname, lname, email, age }
+    //     data = JSON.stringify(data)
+    //     console.log(data);
+
+    // })
+
+    
+</script>

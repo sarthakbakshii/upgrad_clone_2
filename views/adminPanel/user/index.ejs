@@ -1,0 +1,96 @@
+<%-include("../component/header",{
+    title : "Home",
+    cssLink : "/css/adminPanel.css"
+}) %>
+<body>
+    <%- include("../component/navbar") %>
+    <div class="navSpacing" style="margin-top: 100px;"></div>
+
+
+        <figure class="text-center">
+            <blockquote class="blockquote">
+                <p>A list of all users that we are having as a todo list.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                Someone famous but not <cite title="Source Title">Sarthak bakshi</cite>
+            </figcaption>
+        </figure>
+        
+        <table class="table table-striped table-hover admin-table">
+            <thead>
+                <tr>
+                    <th>cource_section</th>
+                    <th>institute</th>
+                    <th>imgUrl</th>
+                    <th>Home page </th>
+                    <th>product page</th>
+                    <th>product page description </th>
+                    <th>General page</th>
+                </tr>
+
+            </thead> 
+        
+            <% item.map( (cource,index)=>{ %>
+                
+                <tr>
+                    <td> <h6> <%= cource.cource_section %> </h6> </td>
+                    <td> <h6>  <%= cource.hp_institute %> </h6> 
+                         <hr>
+                         <h6 style="font-size: 15px; ">Duration : </h6>
+                        <%= cource.hp_duration %>
+                        <hr>
+                        <h6 style="font-size: 15px; ">Promise : </h6>
+                        <%= cource.hp_promise %>
+                          
+                    
+                    </td>
+                    <td> <h6>hope page url</h6>
+                        <img src="<%= cource.hp_imgUrl %>" width="150px" alt="">
+
+                        <h6>produc page url</h6>
+                        <img src="<%= cource.prodP_imgUrl %>" width="150px" alt="">
+                        
+                    </td>
+                    <td> <h6 style="font-size: 15px; ">Title : </h6>
+                        <%= cource.hp_title %>
+                        <hr>
+                        <h6 style="font-size: 15px; ">Description : </h6>
+                        <%= cource.hp_des %>
+                    </td>
+                    
+                    <td> <h6 style="font-size: 15px; ">Title : </h6>
+                        <%= cource.prodP_title %>
+                        <hr>
+                        <h6 style="font-size: 15px; ">Starting date : </h6>
+                        <%= cource.prodP_StartsOn %>
+                    </td>
+                    <td>
+                        <%= cource.prodP_des_a %>
+                        <hr>
+                        <%= cource.prodP_des_b %>
+                    </td>
+                    <td> <h6 style="font-size: 15px; ">Title : </h6>
+                        <%= cource.gen_title %>
+                        <hr>
+                        <h6 style="font-size: 15px; ">Discreption : </h6>
+                        <%= cource.gen_des %>
+                        <hr>
+                        <h6 style="font-size: 15px; ">EMI : </h6>
+                        <%= cource.gen_emi %>
+
+                    </td>
+                    
+                </tr>
+        
+             <% }) %>
+        
+        
+        
+        
+        </table>
+
+    
+    
+    
+</body>
+</html>

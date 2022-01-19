@@ -1,0 +1,81 @@
+#footer {
+    /* height: 40vh; */
+    background-color: rgb(51, 57, 70);
+}
+
+#footer>div {
+    /* background-color: rgb(51,57,70); */
+    padding: 50px 90px;
+    /* padding-bottom: 40px; */
+}
+
+.footer-h-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#footer .nav-logo {
+    color: white;
+}
+
+#footer h3 {
+    color: rgb(233, 230, 230);
+    font-size: 13px;
+    /* margin-top: 0px; */
+}
+
+#footer a {
+    color: rgb(233, 230, 230);
+    font-size: 9px;
+    display: block;
+    margin: 8px;
+    white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+    text-decoration: none;
+  
+}
+
+.small-info-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.social-handle {
+    background-color: inherit;
+    color: rgb(233, 230, 230);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 50px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+button.social-handle {
+
+
+    justify-content: space-between;
+    padding: 0px 10px;
+    width: 200px;
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 10px;
+    border: rgb(233, 230, 230) 1px solid;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+#footer hr {
+
+    width: 95vw;
+    margin: auto;
+
+    color: white;
+    border: .1px solid rgb(170, 168, 168);
+}
