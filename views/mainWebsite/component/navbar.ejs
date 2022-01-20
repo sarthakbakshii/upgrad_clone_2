@@ -40,28 +40,40 @@
 
         
         <div class="modal-body">
-            
-            <div id="details">
+           <form action="">
+
+            <div id="details" class="details">
                 <h2 id="h2" style="color:black;">Enter Your Mobile Number To Start Learning</h2>
                 <div id="dis"></div>
                 <div id="num">
                     <img src="https://www.countryflags.com/wp-content/uploads/india-flag-png-large.png" />
                     <h3 style="color:black">+91</h3>
-                    <input class = "input" id="number" type="number" placeholder="99999 99999" />
+                    <input class = "input" id="number" name="mobile" type="number" placeholder="99999 99999" />
                 </div>
-                <button id="continue">CONTINUE -></button>
-                <form id="nameForm">
-                    <input  class = "input" type="text" id="otp" placeholder="Enter Name"/>
-                        <input class = "input" type="email" id="email" placeholder="Enter Email"/>
-                </form>
-
+                <button type="button" id="continue" class="continue">CONTINUE -></button>
+              
                 <a href="">
                     <h5>Proceed With Email</h5>
                 </a>
 
 
             </div>
-        
+            <div id="details2" class="details" style="height: 0px;width: 0px;flex: 0;">
+              <h2 id="h2" style="color:black;">Enter Your Mobile Number To Start Learning</h2>
+              <div id="dis"></div>
+              <div id="num">
+                <input class="input" id="name" type="text" name="name" placeholder="enter name" />
+                <input class="input" id="email" type="email" name="email" placeholder="emter email" />
+              </div>
+              <button type="submit" class="continue">CONTINUE -></button>
+            
+              <a href="">
+                <h5>Proceed With Email</h5>
+              </a>
+            
+            
+            </div>
+        </form>
 
 
         </div>
@@ -116,41 +128,20 @@ let btn = document.getElementById("continue");
 var  count = 0;
 btn.addEventListener("click",cont);
 
-    let h2 = document.getElementById("h2");
-    let dis = document.getElementById("dis");
-    
-    //console.log(count);
-
-    let otp;
-    let email;
-
-
-    
-    
-    
-    
     function cont(){
         let number = document.getElementById("number").value;
-        //h2.textContent = "Enter Your Name And Email To Continue";
-        //dis.textContent = `We send otp on this number `+number;
         let num = document.getElementById("num");
 
+        const details = document.getElementById("details")
+        const details2 = document.getElementById("details2")
 
-       // num.innerHTML = `<input type="text" id="otp" placeholder="Enter Name"/>
-                          //<input type="email" id="email" placeholder="Enter Email"/>    `;
+        details.style.height = "0px";
+        details.style.width = "0px";
+        details.style.flex = "0";
 
-                          
-        //count++;
-        console.log(count);
-        
-        
-        btn.removeEventListener("click",cont);
-        btn.addEventListener("click",cont1);
-
-        
-
-        
-        
+        details2.style.height = "260px";
+      details2.style.width = "500px";
+      details2.style.flex = "3";
 
 
 

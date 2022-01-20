@@ -254,8 +254,12 @@ color: rgb(238,44,60);
         #imgg{
             flex: 4;
         }
-        #details{
+        .details{
             flex: 3;
+            height: 260px;
+            width: 500px;
+            overflow: hidden;
+            /* border: 1px solid black; */
         }
         #imgg>img{
             width: 110%;
@@ -272,8 +276,10 @@ color: rgb(238,44,60);
         #num{
             display: flex;
             gap: 2%;
+            margin-top: 20px;
+            margin-bottom: 20px;
             justify-content: space-between;
-            border: 2px solid black;
+        
 
         }
         #num>img{
@@ -294,7 +300,7 @@ color: rgb(238,44,60);
             
 
         }
-        #continue{
+        .continue{
             width: 80%;
             background-color:lightgray;
             color:white;
