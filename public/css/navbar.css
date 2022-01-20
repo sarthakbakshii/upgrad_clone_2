@@ -273,6 +273,7 @@ color: rgb(238,44,60);
             display: flex;
             gap: 2%;
             justify-content: space-between;
+            border: 2px solid black;
 
         }
         #num>img{
@@ -337,6 +338,16 @@ color: rgb(238,44,60);
         }
         #email{
           display: block;
+        }
+        #nameForm{
+            border: 2px solid black;
+            height: 0px;
+            overflow: hidden;
+            
+
+        }
+        #nameForm>input{
+            
         }
         
 
