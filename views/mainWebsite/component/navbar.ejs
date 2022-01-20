@@ -40,7 +40,7 @@
 
         
         <div class="modal-body">
-           <form action="">
+           <form action="/users/addUser" method="post">
 
             <div id="details" class="details">
                 <h2 id="h2" style="color:black;">Enter Your Mobile Number To Start Learning</h2>
@@ -86,6 +86,25 @@
 
     <div id="overlay"></div>
 </div>
+<% if(user !== undefined) { %>
+  
+  <script> 
+  let user = {
+    name:'<%-user.name%>',
+    email:'<%-user.email%>'
+
+  };
+  let signUp = document.getElementById("sign-up-btn");
+  if(user.name == ""){
+    signUp.textContent = "Sign Up"
+  } else{
+    signUp.textContent = user.name;
+  }
+
+  
+  console.log(user);
+    (localStorage.setItem("userData" ,JSON.stringify(user))) </script>
+<% } %>
 <script>
     const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -127,9 +146,20 @@ function closeModal(modal) {
 let btn = document.getElementById("continue");
 var  count = 0;
 btn.addEventListener("click",cont);
+let form = document.querySelector("form");
+//form.addEventListener("submit",cont2);
+
+
+
+
+
+
 
     function cont(){
+      
         let number = document.getElementById("number").value;
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
         let num = document.getElementById("num");
 
         const details = document.getElementById("details")
@@ -142,6 +172,14 @@ btn.addEventListener("click",cont);
         details2.style.height = "260px";
       details2.style.width = "500px";
       details2.style.flex = "3";
+      
+
+      localStorage.setItem("userFinal",JSON.stringify(user));
+      let user={
+               name:name,
+               email:email,
+
+             };
 
 
 
@@ -155,7 +193,7 @@ btn.addEventListener("click",cont);
              console.log(otp);
              closeModal(modal);
              let user={
-               name:otp,
+               name:name,
                email:email,
 
              };
@@ -184,4 +222,5 @@ btn.addEventListener("click",cont);
         btn.style.backgroundColor="red";
       }
     }
+   
 </script>

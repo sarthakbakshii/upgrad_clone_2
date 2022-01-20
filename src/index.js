@@ -7,6 +7,9 @@ app.set("view engine", "ejs"); // root directory for views views/
 app.use(express.static("public"));
 
 
+const userController = require("./controllers/user.controller");
+
+
 const courceControler = require("./controllers/cources.controler");
 const adminControler = require("./controllers/admin.controler");
 const homeCountroler = require("./controllers/homepage.controler");
@@ -16,7 +19,9 @@ app.use("/adminpanel",adminControler);
 
 
 app.use("/home",homeCountroler);
-app.use("/product",produtPageControler)
+app.use("/product",produtPageControler);
+
+app.use("/users",userController);
 
 
 
