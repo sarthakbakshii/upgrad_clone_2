@@ -38,18 +38,22 @@
                 src="https://media.istockphoto.com/vectors/various-people-with-smart-gadgetsbooks-on-backgroundeducation-and-vector-id1161994875" />
         </div>
 
-
+        
         <div class="modal-body">
-
+            
             <div id="details">
-                <h2 id="h2">Enter Your Mobile Number To Start Learning</h2>
+                <h2 id="h2" style="color:black;">Enter Your Mobile Number To Start Learning</h2>
                 <div id="dis"></div>
                 <div id="num">
                     <img src="https://www.countryflags.com/wp-content/uploads/india-flag-png-large.png" />
-                    <h3>+91</h3>
-                    <input id="number" type="number" placeholder="99999 99999" />
+                    <h3 style="color:black">+91</h3>
+                    <input class = "input" id="number" type="number" placeholder="99999 99999" />
                 </div>
                 <button id="continue">CONTINUE -></button>
+                <form id="nameForm">
+                    <input  class = "input" type="text" id="otp" placeholder="Enter Name"/>
+                        <input class = "input" type="email" id="email" placeholder="Enter Email"/>
+                </form>
 
                 <a href="">
                     <h5>Proceed With Email</h5>
@@ -57,12 +61,136 @@
 
 
             </div>
+        
 
 
         </div>
+     
+
         <button data-close-button class="close-button">&times;</button>
     </div>
 
 
+
     <div id="overlay"></div>
 </div>
+<script>
+    const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
+
+let btn = document.getElementById("continue");
+var  count = 0;
+btn.addEventListener("click",cont);
+
+    let h2 = document.getElementById("h2");
+    let dis = document.getElementById("dis");
+    
+    //console.log(count);
+
+    let otp;
+    let email;
+
+
+    
+    
+    
+    
+    function cont(){
+        let number = document.getElementById("number").value;
+        //h2.textContent = "Enter Your Name And Email To Continue";
+        //dis.textContent = `We send otp on this number `+number;
+        let num = document.getElementById("num");
+
+
+       // num.innerHTML = `<input type="text" id="otp" placeholder="Enter Name"/>
+                          //<input type="email" id="email" placeholder="Enter Email"/>    `;
+
+                          
+        //count++;
+        console.log(count);
+        
+        
+        btn.removeEventListener("click",cont);
+        btn.addEventListener("click",cont1);
+
+        
+
+        
+        
+
+
+
+    }
+
+    
+        function cont1(otp){
+             otp = document.getElementById("otp").value;
+             email = document.getElementById("email").value;
+
+             console.log(otp);
+             closeModal(modal);
+             let user={
+               name:otp,
+               email:email,
+
+             };
+             
+
+             localStorage.setItem("userFinal",JSON.stringify(user));
+        
+
+        
+
+        if(otp=="1234"){
+            alert("logged in");
+            
+
+        };
+        
+    }
+
+    let change =  document.getElementById("number");
+    change.addEventListener("input",change_red);
+
+    function change_red(){
+      //count=0;
+      count++;
+      if(count==10){
+        btn.style.backgroundColor="red";
+      }
+    }
+</script>
