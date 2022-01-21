@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const purchasedCourceSchema = new mongoose.Schema({
-    cource_id : [{ type : mongoose.Schema.Types.ObjectId, ref : "cources" , required : true}],
+    cource_id : { type : mongoose.Schema.Types.ObjectId, ref : "cources" , required : true},
     user_email : { type :  String , required : true},
 })
 
