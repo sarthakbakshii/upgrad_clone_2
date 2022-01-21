@@ -90,33 +90,10 @@
 
     <div id="overlay"></div>
 </div>
-<% if(user !== undefined) { %>
-  
-  <script> 
-   (localStorage.setItem("userData", JSON.stringify(user))) 
-   
-  let user = {
-    name:'<%-user.name%>',
-    email:'<%-user.email%>'
 
-  };
-
-
-  
-  console.log(user);
-   </script>
-<% } %>
 
 <script>
-    let uName = JSON.parse(localStorage.getItem("userData"));
-      let signUp = document.getElementById("sign-up-btn");
-      console.log(uName);
-
-      if (uName.name == "") {
-        signUp.textContent = "Sign Up"
-      } else {
-        signUp.textContent = uName.name;
-      }
+   
 
     const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -155,16 +132,36 @@ function closeModal(modal) {
   overlay.classList.remove('active')
 }
 
-let btn = document.getElementById("continue");
-var  count = 0;
-btn.addEventListener("click",cont);
-let form = document.querySelector("form");
+
+
+</script>
+
+<% if(user !==undefined) { %>
+
+  <script>
+   
+
+    let userr = {
+      name: '<%-user.name%>',
+      email: '<%-user.email%>'
+
+    };
+    
+  localStorage.setItem("userData", JSON.stringify(userr))
+
+
+    console.log(userr);
+  </script>
+  <% } %>
+
+    <script>
+     
+
+  let btn = document.getElementById("continue");
+  var count = 0;
+  btn.addEventListener("click", cont);
+  let form = document.querySelector("form");
 //form.addEventListener("submit",cont2);
-
-
-
-
-
 
 
     function cont(){
@@ -234,5 +231,18 @@ let form = document.querySelector("form");
         btn.style.backgroundColor="red";
       }
     }
+
+
+     let uName = JSON.parse(localStorage.getItem("userData"));
+      let signUp = document.getElementById("sign-up-btn");
+      console.log(uName);
+
+      if (uName.name == "") {
+        signUp.textContent = "Sign Up"
+      } else {
+        signUp.textContent = uName.name;
+      }
+    
+
    
 </script>

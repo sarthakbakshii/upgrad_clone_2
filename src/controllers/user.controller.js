@@ -8,6 +8,7 @@ router.post("/addUser",async(req,res)=>{
     try{
     const user = await User.create(req.body);
     // window.localStorage.setItem("userData" ,JSON.stringify(user));
+    console.log(user);
     return res.render("mainWebsite/home",{user:req.body});
     // return res.render("mainWebsite/home");
 
