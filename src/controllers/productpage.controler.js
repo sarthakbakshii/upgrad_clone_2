@@ -13,9 +13,11 @@ router.get( "", async (req, res) =>{
             const sections = await Section.find({cource_section: req.query.section}).lean().exec();
             console.log(cources);
             console.log(sections);
+
+            let user ;
             
             
-            return res.render("mainWebsite/product", { cources : cources,sections : sections })
+            return res.render("mainWebsite/product", { cources : cources,sections : sections, user:user })
     }
     catch(e){
         console.log(e.message);
@@ -30,10 +32,11 @@ router.get( "", async (req, res) =>{
 router.get( "/cource", async (req, res) =>{
     try{           
         console.log(req.query.cource, " line 32");
+         let user ;
          
             const cources = await Cource.findOne({ _id : req.query.cource}).lean().exec();
             console.log(cources);
-            return res.send(cources)
+               return res.render("mainWebsite/specificProduct", { cources : cources,  user:user })
     }
     catch(e){
         console.log(e.message);

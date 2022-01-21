@@ -152,3 +152,19 @@
         </div>
         <!-- ----------------------------------   CARD     ---------------------------------------------- -->
 </body>
+<% if(user !==undefined) { %>
+
+    <script>
+        (localStorage.setItem("userData", JSON.stringify(user)))
+
+        let user = {
+            name: '<%-user.name%>',
+            email: '<%-user.email%>'
+
+        };
+
+
+
+        console.log(user);
+    </script>
+    <% } %>

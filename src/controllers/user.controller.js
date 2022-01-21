@@ -7,8 +7,10 @@ router.post("/addUser",async(req,res)=>{
    // console.log(req.body);
     try{
     const user = await User.create(req.body);
-    //window.localStorage.setItem("userData" ,JSON.stringify(user));
+    // window.localStorage.setItem("userData" ,JSON.stringify(user));
     return res.render("mainWebsite/home",{user:req.body});
+    // return res.render("mainWebsite/home");
+
     }
     catch(err){
         return res.send(err.message).status(500);

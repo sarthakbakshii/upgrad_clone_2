@@ -6,8 +6,9 @@ const router = express.Router();
 // *------ home page
 router.get( "", async (req, res) =>{
     try{
-        user = "";
+        let user ;
             return res.render("mainWebsite/home",{user:user})
+            // return res.render("mainWebsite/home")
     }
     catch(e){
         console.log(e.message);

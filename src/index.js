@@ -8,6 +8,7 @@ app.use(express.static("public"));
 
 
 const userController = require("./controllers/user.controller");
+const purchasedCource = require("./controllers/purchasedCource.controler");
 
 
 const courceControler = require("./controllers/cources.controler");
@@ -23,7 +24,7 @@ app.use("/product",produtPageControler);
 
 app.use("/users",userController);
 
-
+app.use("/buy",purchasedCource)
 
 app.use("/courses",courceControler);
 

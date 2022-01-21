@@ -1,7 +1,11 @@
 <div class="space-bet-flex navbar" id="navbar">
     <div class="space-bet-flex navbar">
         <div class="space-bet-flex left-nav ">
-            <div class="nav-logo"> up<span class="nav-logo-span">G</span>rad</div>
+            <div onclick=" window.location.href = '/home'">
+                  <div class="nav-logo"> up<span class="nav-logo-span">G</span>rad</div>
+            </div>
+            
+
             <div class=" space-bet-flex btn-style courses-btn" id="courses-btn">Courses<i
                     class="fas fa-angle-down arrow"></i>
             </div>
@@ -29,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div data-modal-target="#modal" class="btn-style space-bet-flex" id="sign-up-btn">Sign Up</div>
+            <div data-modal-target="#modal" style="display: flex;justify-content: center; align-items: center;text-align: center;" class="btn-style space-bet-flex" id="sign-up-btn">Sign Up</div>
         </div>
     </div>
     <div class="modal" id="modal">
@@ -89,23 +93,31 @@
 <% if(user !== undefined) { %>
   
   <script> 
+   (localStorage.setItem("userData", JSON.stringify(user))) 
+   
   let user = {
     name:'<%-user.name%>',
     email:'<%-user.email%>'
 
   };
-  let signUp = document.getElementById("sign-up-btn");
-  if(user.name == ""){
-    signUp.textContent = "Sign Up"
-  } else{
-    signUp.textContent = user.name;
-  }
+
 
   
   console.log(user);
-    (localStorage.setItem("userData" ,JSON.stringify(user))) </script>
+   </script>
 <% } %>
+
 <script>
+    let uName = JSON.parse(localStorage.getItem("userData"));
+      let signUp = document.getElementById("sign-up-btn");
+      console.log(uName);
+
+      if (uName.name == "") {
+        signUp.textContent = "Sign Up"
+      } else {
+        signUp.textContent = uName.name;
+      }
+
     const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
