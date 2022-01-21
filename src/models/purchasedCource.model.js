@@ -7,3 +7,6 @@ const purchasedCourceSchema = new mongoose.Schema({
 
 const PurchasedCource = new mongoose.model( "purchasedCource",purchasedCourceSchema);
 module.exports = PurchasedCource;
+
+
+

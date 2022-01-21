@@ -1,0 +1,198 @@
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+    margin: 0px;
+  }
+  #navDiv {
+   margin-top: 15px;
+      left: 15px;
+    width: 98%;
+    height: 100px;
+  background-color: white;
+    display: flex;
+    
+    justify-content: space-evenly;
+    padding:18px 25px;
+    
+  }
+
+  #navDiv.fixed {
+    position: fixed;
+    box-shadow: 5px 5px 19px 0px rgba(0, 0, 0, 0.5);
+  }
+/*  
+  #headtext {
+    width: 25%;
+    height: 70px;
+    display: flex;
+  }
+  #headtext > p {
+    font-size: 14px;
+  } */
+  .logoImg {
+    color: white;
+    width: 50%;
+  }
+  #details{
+    /* margin-top: 30px; */
+    height: 300px;
+    width: 100%;
+    /* background-color: white; */
+  
+  }
+  #mainDiv {
+    
+    width: 88%;
+    height: 560px;
+    margin-top: 28px;
+    margin-left: 55px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 1px solid blue;
+  }
+  #payHead {
+    width: 98%;
+    height: 50px;
+    border: 1px solid green;
+    /* background-color: #333; */
+    border-radius: 3px;
+    color: black;
+    padding: 5px;
+  }
+  h3 {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+  #payDiv {
+    width: 63%;
+    height: 100%;
+    
+  }
+  .innertext{
+      margin-top: 5px;
+
+      
+  }
+
+  #payOption {
+    margin-top: 20px;
+    height: 89%;
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px;
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+    vertical-align: top;
+    
+  }
+  #optionSelect {
+    margin-top: 38px;
+    display: inline-block;
+    height: 89%;
+    width: 68.6%;
+    color: grey;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px;
+  }
+  #payOption > div {
+    width: 90%;
+    margin-top: 18px;
+    height: 100px;
+    padding-top: 25px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: grey;
+    border: 1px solid grey;
+    /* border-right: 5px;
+    border-left: 5px; */
+    border-radius: 10px;
+  }
+  #payOption > div:hover {
+    color: black;
+    border-left: 3px solid rgb(228, 12, 70);
+  }
+  input,
+  select {
+    height: 25px;
+  
+    border-radius: 2px;
+    outline: 0;
+    background-color: white;
+  }
+  select {
+    border: 0;
+    height: 40px;
+    margin-right: 5px;
+  }
+  #cvv {
+    width: 52px;
+  }
+  #btn-cc,#btn-dc{
+    margin-top: 10px;
+    height: 40px;
+    width: 230px;
+    background-color: rgb(228, 12, 70);
+    color: white;
+    border: 0;
+    border-radius: 3px;
+  }
+  #btn-cc:hover,#btn-dc:hover {
+    background-color: rgb(225, 31, 82);
+  }
+  #heading {
+    color: black;
+    font-size: 18px;
+  }
+  a {
+    color: grey;
+  }
+  .cc-td {
+    color: black;
+  }
+  h6 {
+    line-height: 1px;
+  }
+  #trust {
+    margin-top: -10px;
+  }
+  #btn-cod {
+    margin-top: 10px;
+    height: 40px;
+    width: 230px;
+    background-color: rgb(228, 12, 70);
+    color: white;
+    border: 0;
+    border-radius: 3px;
+  }
+  #btn-cod:hover {
+    background-color: rgb(225, 31, 82);
+  }
+  #upi_val{
+    width: 280px;
+    margin-left: 5px;
+  }
+  #varify{
+    height: 30px;
+    width: 60px;
+    background-color:#333;
+    color:white;
+    border:0;
+    border-radius: 3px;
+  }
+  #btn-upi{
+    margin-top: 10px;
+    height: 38px;
+    width: 230px;
+    margin-left: 7px;
+    background-color: #B4B4B4;
+    color: white;
+    border: 0;
+    border-radius: 3px;
+  }
+ #varify:hover{
+  background-color:rgb(73, 71, 71);
+ }
+
