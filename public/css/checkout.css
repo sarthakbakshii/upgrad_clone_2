@@ -99,22 +99,19 @@ body {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px;
   }
   #payOption > div {
-    width: 90%;
+    /* width: 90%; */
     margin-top: 18px;
     height: 100px;
     padding-top: 25px;
     padding-left: 20px;
     font-weight: bold;
     color: grey;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     /* border-right: 5px;
     border-left: 5px; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
   }
-  #payOption > div:hover {
-    color: black;
-    border-left: 3px solid rgb(228, 12, 70);
-  }
+ 
   input,
   select {
     height: 25px;

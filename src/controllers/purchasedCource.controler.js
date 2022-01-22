@@ -7,21 +7,21 @@ const PurchasedCource = require("../models/purchasedCource.model");
 router.get("",async(req,res)=>{
    // console.log(req.body);
     try{
-        const test = await PurchasedCource.find({cource_id:req.query.cource_id},{user_email:req.query.user_email}).lean().exec()
-        console.log(test)
-if(test.length ==0){
-    const buy = await PurchasedCource.create({
-        cource_id : req.query.cource_id,
-        user_email : req.query.user_email
-});
-}
+        const test = await PurchasedCource.find({cource_id:req.query.cource_id, user_email:req.query.user_email}).lean().exec()
+        console.log("test", test)
 
-
+        if(test.length ==0){
+            const buy = await PurchasedCource.create({
+                cource_id : req.query.cource_id,
+                user_email : req.query.user_email
+        });
+        }
 
 
     let user ;
-    const info = await PurchasedCource.find({ user_email : req.query.user_email},{_id:0,cource_id:1}).lean().exec()
     
+    const info = await PurchasedCource.find({ user_email : req.query.user_email},{_id:0,cource_id:1}).lean().exec()
+    console.log("info: ", info);
 let courcearray =[]
 // console.log(info)
 for(var i=0;i<info.length;i++){
@@ -30,7 +30,8 @@ for(var i=0;i<info.length;i++){
     courcearray.push(courceinfo)
     console.log( courceinfo)
 }
-console.log( courcearray)
+console.log("courcearray", courcearray)
+
 return res.render("mainWebsite/checkout",{user:user,courcearray:courcearray});
 
     }

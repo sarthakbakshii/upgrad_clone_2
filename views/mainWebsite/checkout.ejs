@@ -1,4 +1,18 @@
 <%- include('component/head') %>
+<style>
+  .openmyBox{
+    border-radius: 10px 0px 0px 10px;
+    border: 2px solid red;
+    border-left: 8px solid red;
+    width: 100%;
+    border-right: 0px solid;
+  }
+  .closemyBox{
+   border-radius: 10px;
+   border: 1px solid gray;
+   width: 90%;
+  }
+</style>
 <body>
     <%- include('component/navbar') %>
  
@@ -8,22 +22,22 @@
         <h3 id="username"></h3>
     </div> -->
     <div  id="details" style="margin-top: 100px; display: flex; flex-direction: column;  background-color:white ; box-shadow: 5px 5px 19px 0px rgba(0, 0, 0, 0.5);
-    width: 88%; margin-left: 60px; border: 1px lightgrey; border-radius: 15px; padding: 20px; box-sizing: border-box;">
+    width: 88%; margin: 50px auto ;border: 1px lightgrey; border-radius: 15px; padding: 20px; box-sizing: border-box;">
       <%courcearray.map((item)=>{%>
-        <div style="display: flex; box-sizing: border-box; padding: 20px; ">
-                  <div style="margin: 10px; text-align:center; height: 120px;  display: flex; justify-content: space-around; align-items: center; flex-direction: column; ">
-                    <h3 style="font-weight: lighter; color: rgb(82, 79, 79);">Start Learning From:</h3>
-                    <h1 style="padding-top: 5px;  "><%=item.gen_emi%>/mo**</h1>
-                    <h2 style="font-size:18px; color:rgb(65, 63, 63); ">AT 0% Interest or INR. 4,50,000  </h2>
+        <div style="display: flex; box-sizing: border-box; padding: 20px; border: 0px solid;justify-content: space-around;">
+                <div style=" border: 0px solid; text-align:center; height: 120px;  display: flex; justify-content: center;gap: 10px; align-items: center; flex-direction: column; ">
+                    <h3 style="font-weight: lighter;margin-left: 0px; border: 0px solid;color: rgb(82, 79, 79);">Start Learning From:</h3>
+                    <h1 style="margin-top: 0px;margin-bottom: 0px; border: 0px solid; "><%=item.gen_emi%>/mo**</h1>
+                    <h2 style="font-size:18px;margin-top: 0px; color:rgba(65, 63, 63, 0.836);border: 0px solid; ">AT 0% Interest or INR. 4,50,000  </h2>
                 
                     
-                  </div>
-                <div style="display: flex; margin-left: 250px;  ">
+                </div>
+                <div style="display: flex; margin-left: 250px; border: 0px solid;width: 600px; justify-content: space-between;  ">
                   <div>
                     <h1> Your courses:</h1>
                   </div>
 
-                  <div style="display:flex;  border: 1px solid lightgrey; height: 150px; width: 450px; border-radius: 10px; margin-left: -40px; margin-top: 10px; ">
+                  <div style="display:flex;  border: 0px solid lightgrey; height: 150px; width: 450px; border-radius: 10px; margin-left: -40px; margin-top: 10px; ">
                     <span><img style="margin: 10px; width: 50px; height:50px;" src="https://cdn-icons-png.flaticon.com/128/864/864102.png" alt=""></span>
                     <span ">
                       <h3><%=item. hp_title%></h3>
@@ -48,33 +62,52 @@
       <div id="payDiv">
         <div id="payHead"><h3>1.Make Payment</h3></div>
         <div id="payOption">
-          <div id="creditCard">	&#9734 Recommended
+          <div id="creditCard" class="openmyBox">	&#9734 Recommended
               <div  class="innertext">o% interest</div>
           </div>
-          <div id="debitCard">Pocket-Friendly
+          <div id="debitCard" class="closemyBox">Pocket-Friendly
             <div class="innertext">Lowest cost / month</div>
           </div>
-          <div id="cash">&#9202  Reserve a Seat
+          <div id="cash" class="closemyBox">&#9202  Reserve a Seat
             <div class="innertext">Pay the rest later</div>
           </div>
-          <div id="upi">&#x20B9   Other options
+          <div id="upi" class="closemyBox">&#x20B9   Other options
             <div id="otheropt" class="innertext">Pay upfront</div>
           </div>
         </div>
         <div id="optionSelect">
        </div>
       </div>
-      <div id="sumDiv">
-        <div class="paymentDiv" style="border:1px solid lightgrey; height: 200px; width: 300px; border-radius:10px; box-shadow: 5px 5px 19px 0px rgba(0, 0, 0, 0.5);">
+      <div id="sumDiv" style="border: 0px solid black; width: 350px;">
+        <div class="paymentDiv" style="border:1px solid lightgrey;box-sizing: border-box;padding: 10px; width: 100%; border-radius:10px; box-shadow: 5px 5px 19px 0px rgba(0, 0, 0, 0.5);">
           <h3>SUMMARY</h3>
-          <div style="display: flex; border-bottom: 1px solid black; margin-top: 20px;">
-            <div style="margin: 10px; font-size:large; color: grey;">Course fee</div>
-            <div style="margin: 10px; margin-left: 70px;  font-size: 18px; color: grey;">INR 4,50,000</div>
+          <div style="display: flex; border-bottom: 1px solid black; margin-top: 20px;flex-direction: column;">
+           <script> let sum = 0 </script>
+              <% courcearray.map( a=> { %>
+                  <div style="display: flex;border: 0px solid;justify-content: space-evenly;">
+                      <div style="margin: 10px; font-size:large; color: grey;">Course fee : </div>
+                      <div style="margin: 10px;  font-size: 18px; color: grey;">
+                        <%= a.gen_emi %>
+                      </div>
+                      <script>
+                        var price = '<%-a.gen_emi%>';
+                        price = Number(price.substring(3).split(",").join(""))
+                        console.log(price);
+                        sum += price;
+                        console.log("sum = ",sum);
+                      </script>
+                  </div>
+                <% } )%>
+
+           
+             
+                  
+
           </div>
           
           <div style="display: flex;">
             <div style="margin: 10px; font-weight: bold;" >TOTAL</div>
-            <div style="margin: 10px; font-weight: bold; margin-left: 105px;">INR 4,50,000</div>
+            <div style="margin: 10px; font-weight: bold; margin-left: 105px;">INR <script>document.write(sum)</script></div>
            
           </div>
           <div style="margin-left: 50px; font-size:15px;">
@@ -90,45 +123,25 @@
 // cards section starts here
 document.getElementById("creditCard").addEventListener("click", () => {
   document.getElementById("optionSelect").innerHTML = "";
-  document.getElementById("creditCard").style.color = "black";
-  document.getElementById("creditCard").style.borderLeft =
-    "3px solid red";
-    document.getElementById("creditCard").style.width = "100%"
-    document.getElementById("creditCard").style.borderRight = "0"
-    document.getElementById("creditCard").style.borderRadius ="10px 0px 0px 10px"
-  document.getElementById("debitCard").style.color = "grey";
-  document.getElementById("debitCard").style.width = "90%";
-  document.getElementById("debitCard").style.borderLeft = "1px";
-  document.getElementById("debitCard").style.borderLeft = "1px";
-  document.getElementById("cash").style.color = "grey";
-  document.getElementById("cash").style.width = "90%";
-  document.getElementById("cash").style.borderLeft = "1px";
-  document.getElementById("upi").style.color = "grey";
-  document.getElementById("upi").style.borderLeft = "1px";
-  document.getElementById("upi").style.width = "90%";
+
   displayCredit();
+
+
+  document.getElementById("debitCard").className = "closemyBox"
+  document.getElementById("cash").className = "closemyBox"
+  document.getElementById("upi").className = "closemyBox"
+  document.getElementById("creditCard").className = "openmyBox"
+  
 });
 
 function success() {
 location.href="thankyou.html"
 }
 document.getElementById("debitCard").addEventListener("click", () => {
-  document.getElementById("optionSelect").innerHTML = "";
-  document.getElementById("debitCard").style.color = "red";
-  document.getElementById("debitCard").style.borderLeft =
-    "8px solid red";
-  document.getElementById("creditCard").style.color = "grey";
-  document.getElementById("debitCard").style.Width ="100%"
-  document.getElementById("debitCard").style.borderRight = "0px"
-  document.getElementById("debitCard").style.borderRadius = "10px 0px 0px 10px"
-  document.getElementById("creditCard").style.borderRight = "1px";
-  document.getElementById("creditCard").style.width = "90%";
-  document.getElementById("cash").style.color = "grey";
-  document.getElementById("cash").style.borderLeft = "1px";
-  document.getElementById("upi").style.color = "grey";
-  document.getElementById("upi").style.borderLeft = "1px";
-  document.getElementById("upi").style.width = "90%";
-  document.getElementById("cash").style.width = "90%";
+   document.getElementById("optionSelect").innerHTML = "";
+
+ 
+
   document.getElementById(
     "optionSelect"
   ).innerHTML = ` <div id="displayPayment">
@@ -144,13 +157,17 @@ document.getElementById("debitCard").addEventListener("click", () => {
   </div>
   <div id="bankDetails"></div>
 </div>`;
+
+  document.getElementById("debitCard").className = "openmyBox"
+  document.getElementById("cash").className = "closemyBox"
+  document.getElementById("upi").className = "closemyBox"
+  document.getElementById("creditCard").className = "closemyBox"
 });
 
 
 function displayCredit() {
-  document.getElementById("creditCard").style.color = "red";
-  document.getElementById("creditCard").style.borderLeft =
-    "8px solid red";
+ 
+ 
 
   document.getElementById(
     "optionSelect"
@@ -173,26 +190,7 @@ function displayCredit() {
 // cash section starts here
 document.getElementById("cash").addEventListener("click", () => {
   document.getElementById("optionSelect").innerHTML = "";
-  document.getElementById("cash").style.color = "red";
-  document.getElementById("upi").style.color = "grey";
-  document.getElementById("upi").style.borderLeft = "0";document.getElementById("cash").style.borderLeft =
-    "8px solid red";
-    document.getElementById("cash").style.Width = "100%"
-    document.getElementById("cash").style.borderRight = "0px"
-    document.getElementById("cash").style.borderRadius = "10px 0px 0px 10px"
-   
- 
- 
- 
-  document.getElementById("creditCard").style.color = "grey";
-  document.getElementById("creditCard").style.borderLeft = "0";
-  document.getElementById("debitCard").style.color = "grey";
-  document.getElementById("debitCard").style.borderLeft = "0";
-  document.getElementById("upi").style.color = "grey";
-  document.getElementById("upi").style.borderLeft = "0";
-  document.getElementById("upi").style.width = "90%";
-  document.getElementById("creditCard").style.width = "90%";
-  document.getElementById("debitCard").style.width = "90%";
+
   document.getElementById(
     "optionSelect"
   ).innerHTML = `<div id="payUsing"><p id="heading">Pay using UPI</p></div>
@@ -207,27 +205,17 @@ document.getElementById("cash").addEventListener("click", () => {
 
 <p id="trust-upi">TrustPay: 100% Payment Protection, Easy Returns Policy</p>
 <h6>By placing the order, I have read and agreed to snapdeal.com's  <a href="#">Terms of Use</a>   |   <a href="#">Terms of sale</a></h6>`;
+
+  document.getElementById("debitCard").className = "closemyBox"
+  document.getElementById("cash").className = "openmyBox"
+  document.getElementById("upi").className = "closemyBox"
+  document.getElementById("creditCard").className = "closemyBox"
+
 });
 // upi section starts here
 document.getElementById("upi").addEventListener("click", () => {
   document.getElementById("optionSelect").innerHTML = "";
-  document.getElementById("upi").style.color = "red";
-  document.getElementById("upi").style.borderLeft =
-    "8px solid red";
 
-    document.getElementById("upi").style.borderRight = "0px"
-    document.getElementById("upi").style.borderRadius ="10px 0px 0px 10px"
-    document.getElementById("upi").style.Width ="100%"
-    
-  document.getElementById("creditCard").style.color = "grey";
-  document.getElementById("creditCard").style.borderLeft = "0";
-  document.getElementById("debitCard").style.color = "grey";
-  document.getElementById("debitCard").style.borderLeft = "0";
-  document.getElementById("cash").style.color = "grey";
-  document.getElementById("cash").style.borderLeft = "0";
-  document.getElementById("creditCard").style.width = "90%";
-  document.getElementById("debitCard").style.width = "90%";
-  document.getElementById("cash").style.width = "90%";
   
   document.getElementById(
     "optionSelect"
@@ -244,6 +232,12 @@ document.getElementById("upi").addEventListener("click", () => {
   </div>
   <div id="bankDetails"></div>
 </div>`;
+
+  document.getElementById("debitCard").className = "closemyBox"
+  document.getElementById("cash").className = "closemyBox"
+  document.getElementById("upi").className = "openmyBox"
+  document.getElementById("creditCard").className = "closemyBox"
+
 });
 function changecolor(){
   document.getElementById("btn-upi").style.backgroundColor="rgb(238,44,60)"
