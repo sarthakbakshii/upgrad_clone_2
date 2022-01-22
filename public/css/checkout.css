@@ -3,7 +3,7 @@ body {
     font-family: sans-serif;
     margin: 0px;
   }
-  #navDiv {
+  /* #navDiv {
    margin-top: 15px;
       left: 15px;
     width: 98%;
@@ -19,7 +19,7 @@ body {
   #navDiv.fixed {
     position: fixed;
     box-shadow: 5px 5px 19px 0px rgba(0, 0, 0, 0.5);
-  }
+  } */
 /*  
   #headtext {
     width: 25%;
@@ -35,7 +35,7 @@ body {
   }
   #details{
     /* margin-top: 30px; */
-    height: 300px;
+    /* height: 150px; */
     width: 100%;
     /* background-color: white; */
   
@@ -83,13 +83,14 @@ body {
     height: 89%;
     width: 30%;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     display: inline-block;
     vertical-align: top;
     
   }
   #optionSelect {
+    /* border: 1px solid red; */
     margin-top: 38px;
     display: inline-block;
     height: 89%;

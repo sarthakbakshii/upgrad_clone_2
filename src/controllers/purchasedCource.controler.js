@@ -7,7 +7,7 @@ const PurchasedCource = require("../models/purchasedCource.model");
 router.get("",async(req,res)=>{
    // console.log(req.body);
     try{
-        const test = await PurchasedCource.find({cource_id:req.query.cource_id}).lean().exec()
+        const test = await PurchasedCource.find({cource_id:req.query.cource_id},{user_email:req.query.user_email}).lean().exec()
         console.log(test)
 if(test.length ==0){
     const buy = await PurchasedCource.create({

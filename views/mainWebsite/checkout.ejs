@@ -7,20 +7,38 @@
         <h3>Checkout</h3>
         <h3 id="username"></h3>
     </div> -->
-    <div  id="details" style="margin-top: 100px; display: flex; height: 300px;width: 88%; margin-left: 60px; border: 1px solid rgb(23,225,230); border-radius: 15px;">
+    <div  id="details" style="margin-top: 100px; display: flex; flex-direction: column;  background-color:white ; box-shadow: 5px 5px 19px 0px rgba(0, 0, 0, 0.5);
+    width: 88%; margin-left: 60px; border: 1px lightgrey; border-radius: 15px; padding: 20px; box-sizing: border-box;">
       <%courcearray.map((item)=>{%>
-        <div>
-          <h1><%=item. hp_title%></h1>
-           <h5><%=item. hp_institute%></h5>
-           <span><%=item. hp_duration%></span><span>/<%=item.prodP_StartsOn%></span>
-           
+        <div style="display: flex; box-sizing: border-box; padding: 20px; ">
+                  <div style="margin: 10px; text-align:center; height: 120px;  display: flex; justify-content: space-around; align-items: center; flex-direction: column; ">
+                    <h3 style="font-weight: lighter; color: rgb(82, 79, 79);">Start Learning From:</h3>
+                    <h1 style="padding-top: 5px;  "><%=item.gen_emi%>/mo**</h1>
+                    <h2 style="font-size:18px; color:rgb(65, 63, 63); ">AT 0% Interest or INR. 4,50,000  </h2>
+                
+                    
+                  </div>
+                <div style="display: flex; margin-left: 250px;  ">
+                  <div>
+                    <h1> Your courses:</h1>
+                  </div>
+
+                  <div style="display:flex;  border: 1px solid lightgrey; height: 150px; width: 450px; border-radius: 10px; margin-left: -40px; margin-top: 10px; ">
+                    <span><img style="margin: 10px; width: 50px; height:50px;" src="https://cdn-icons-png.flaticon.com/128/864/864102.png" alt=""></span>
+                    <span ">
+                      <h3><%=item. hp_title%></h3>
+                      <h5 style="margin-top: 5px;" ><%=item. hp_institute%></h5>
+                      <span style="margin-top: 10px;" ><%=item. hp_duration%></span><span> | <%=item.prodP_StartsOn%></span>
+                    </span>
+                  
+                  </div>
+                
+                
+                </div>
+               
         </div>
-       <div>
-       
-        <h3>Start Learning From</h3>
-        <h1><%=item.gen_emi%>/mo**</h1>
-        <h2>AT 0% Interest or INR. 4,50,000 </h2>
-       </div>
+        <hr>
+  
             
         <% }) %>
           </div>
@@ -47,8 +65,21 @@
        </div>
       </div>
       <div id="sumDiv">
-        <div class="paymentDiv" style="border:1px solid red; height: 300px; width: 300px;">
-
+        <div class="paymentDiv" style="border:1px solid lightgrey; height: 200px; width: 300px; border-radius:10px; box-shadow: 5px 5px 19px 0px rgba(0, 0, 0, 0.5);">
+          <h3>SUMMARY</h3>
+          <div style="display: flex; border-bottom: 1px solid black; margin-top: 20px;">
+            <div style="margin: 10px; font-size:large; color: grey;">Course fee</div>
+            <div style="margin: 10px; margin-left: 70px;  font-size: 18px; color: grey;">INR 4,50,000</div>
+          </div>
+          
+          <div style="display: flex;">
+            <div style="margin: 10px; font-weight: bold;" >TOTAL</div>
+            <div style="margin: 10px; font-weight: bold; margin-left: 105px;">INR 4,50,000</div>
+           
+          </div>
+          <div style="margin-left: 50px; font-size:15px;">
+            or INR.12,396/mo** at 0% Interest 
+          </div>
         </div>
         
       </div>
@@ -62,12 +93,18 @@ document.getElementById("creditCard").addEventListener("click", () => {
   document.getElementById("creditCard").style.color = "black";
   document.getElementById("creditCard").style.borderLeft =
     "3px solid red";
+    document.getElementById("creditCard").style.width = "100%"
+    document.getElementById("creditCard").style.borderRight = "0"
+    document.getElementById("creditCard").style.borderRadius ="10px 0px 0px 10px"
   document.getElementById("debitCard").style.color = "grey";
-  document.getElementById("debitCard").style.borderLeft = "0";
+  document.getElementById("debitCard").style.width = "90%";
+  document.getElementById("debitCard").style.borderLeft = "1px";
   document.getElementById("cash").style.color = "grey";
-  document.getElementById("cash").style.borderLeft = "0";
+  document.getElementById("cash").style.width = "90%";
+  document.getElementById("cash").style.borderLeft = "1px";
   document.getElementById("upi").style.color = "grey";
-  document.getElementById("upi").style.borderLeft = "0";
+  document.getElementById("upi").style.borderLeft = "1px";
+  document.getElementById("upi").style.width = "90%";
   displayCredit();
 });
 
@@ -80,11 +117,17 @@ document.getElementById("debitCard").addEventListener("click", () => {
   document.getElementById("debitCard").style.borderLeft =
     "8px solid red";
   document.getElementById("creditCard").style.color = "grey";
-  document.getElementById("creditCard").style.borderLeft = "0";
+  document.getElementById("debitCard").style.Width ="100%"
+  document.getElementById("debitCard").style.borderRight = "0px"
+  document.getElementById("debitCard").style.borderRadius = "10px 0px 0px 10px"
+  document.getElementById("creditCard").style.borderRight = "1px";
+  document.getElementById("creditCard").style.width = "90%";
   document.getElementById("cash").style.color = "grey";
-  document.getElementById("cash").style.borderLeft = "0";
+  document.getElementById("cash").style.borderLeft = "1px";
   document.getElementById("upi").style.color = "grey";
-  document.getElementById("upi").style.borderLeft = "0";
+  document.getElementById("upi").style.borderLeft = "1px";
+  document.getElementById("upi").style.width = "90%";
+  document.getElementById("cash").style.width = "90%";
   document.getElementById(
     "optionSelect"
   ).innerHTML = ` <div id="displayPayment">
@@ -133,12 +176,22 @@ document.getElementById("cash").addEventListener("click", () => {
   document.getElementById("upi").style.color = "grey";
   document.getElementById("upi").style.borderLeft = "0";document.getElementById("cash").style.borderLeft =
     "8px solid red";
+    document.getElementById("cash").style.Width = "100%"
+    document.getElementById("cash").style.borderRight = "0px"
+    document.getElementById("cash").style.borderRadius = "10px 0px 0px 10px"
+   
+ 
+ 
+ 
   document.getElementById("creditCard").style.color = "grey";
   document.getElementById("creditCard").style.borderLeft = "0";
   document.getElementById("debitCard").style.color = "grey";
   document.getElementById("debitCard").style.borderLeft = "0";
   document.getElementById("upi").style.color = "grey";
   document.getElementById("upi").style.borderLeft = "0";
+  document.getElementById("upi").style.width = "90%";
+  document.getElementById("creditCard").style.width = "90%";
+  document.getElementById("debitCard").style.width = "90%";
   document.getElementById(
     "optionSelect"
   ).innerHTML = `<div id="payUsing"><p id="heading">Pay using UPI</p></div>
@@ -160,6 +213,10 @@ document.getElementById("upi").addEventListener("click", () => {
   document.getElementById("upi").style.color = "red";
   document.getElementById("upi").style.borderLeft =
     "8px solid red";
+
+    document.getElementById("upi").style.borderRight = "0px"
+    document.getElementById("upi").style.borderRadius ="10px 0px 0px 10px"
+    document.getElementById("upi").style.Width ="100%"
     
   document.getElementById("creditCard").style.color = "grey";
   document.getElementById("creditCard").style.borderLeft = "0";
@@ -167,6 +224,10 @@ document.getElementById("upi").addEventListener("click", () => {
   document.getElementById("debitCard").style.borderLeft = "0";
   document.getElementById("cash").style.color = "grey";
   document.getElementById("cash").style.borderLeft = "0";
+  document.getElementById("creditCard").style.width = "90%";
+  document.getElementById("debitCard").style.width = "90%";
+  document.getElementById("cash").style.width = "90%";
+  
   document.getElementById(
     "optionSelect"
   ).innerHTML = `<div id="displayPayment">
