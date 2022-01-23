@@ -118,6 +118,47 @@
       </div>
     </div>
  </body>
+
+ <script src="https://cdn.jsdelivr.net/npm/axios@0.25.0/dist/axios.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+  axios.post(`/order?amount=${sum}`).then((info) => {
+    console.log(info);
+
+    var options = {
+      "key": "rzp_test_Niuh6hOjeEJsU6",
+      "name": "UpGrad",
+      "description": "Test Transaction",
+      "image": "/logo.png",
+      "order_id": info.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+      "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+      },
+      "notes": {
+        "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+        "color": "#3399cc"
+      }
+    };
+
+      var rzp1 = new Razorpay(options);
+    document.getElementById('upi').onclick = function (e) {
+      console.log("working");
+      rzp1.open();
+      e.preventDefault();
+    }
+
+  })
+
+
+
+</script>
+
 <script>
   displayCredit(); 
 // cards section starts here
@@ -213,32 +254,32 @@ document.getElementById("cash").addEventListener("click", () => {
 
 });
 // upi section starts here
-document.getElementById("upi").addEventListener("click", () => {
-  document.getElementById("optionSelect").innerHTML = "";
-
+// document.getElementById("upi").addEventListener("click", () => {
+//   document.getElementById("optionSelect").innerHTML = "";
+//   window.location.href = `/order`
   
-  document.getElementById(
-    "optionSelect"
-  ).innerHTML = `<div id="displayPayment">
-  <div style="display: flex; height: 150px; width: 600px ;justify-content: space-evenly;  " id="firstPayment">
-      <div style="height:  110px; width: 200px; border: 1px solid rgb(223,225,230); border-radius: 15px;" id="credit"><h4>Credit / Debit Card</h4>
-      <p>(Zero Down Payment)</p>
-      </div>
-      <div style="height: 110px; width: 200px; border: 1px solid rgb(223,225,230);border-radius: 15px; "  id="emicredit">
-          <h4>	Net Banking</h4>
-          <p>(min. INR-15,000 Down Payment)</p>
+// //   document.getElementById(
+// //     "optionSelect"
+// //   ).innerHTML = `<div id="displayPayment">
+// //   <div style="display: flex; height: 150px; width: 600px ;justify-content: space-evenly;  " id="firstPayment">
+// //       <div style="height:  110px; width: 200px; border: 1px solid rgb(223,225,230); border-radius: 15px;" id="credit"><h4>Credit / Debit Card</h4>
+// //       <p>(Zero Down Payment)</p>
+// //       </div>
+// //       <div style="height: 110px; width: 200px; border: 1px solid rgb(223,225,230);border-radius: 15px; "  id="emicredit">
+// //           <h4>	Net Banking</h4>
+// //           <p>(min. INR-15,000 Down Payment)</p>
       
-      </div>
-  </div>
-  <div id="bankDetails"></div>
-</div>`;
+// //       </div>
+// //   </div>
+// //   <div id="bankDetails"></div>
+// // </div>`;
 
-  document.getElementById("debitCard").className = "closemyBox"
-  document.getElementById("cash").className = "closemyBox"
-  document.getElementById("upi").className = "openmyBox"
-  document.getElementById("creditCard").className = "closemyBox"
+//   document.getElementById("debitCard").className = "closemyBox"
+//   document.getElementById("cash").className = "closemyBox"
+//   document.getElementById("upi").className = "openmyBox"
+//   document.getElementById("creditCard").className = "closemyBox"
 
-});
+// });
 function changecolor(){
   document.getElementById("btn-upi").style.backgroundColor="rgb(238,44,60)"
   document.getElementById("btn-upi").setAttribute("onclick","success()")
@@ -259,35 +300,6 @@ document.getElementById("secondPay").addEventListener("click",()=>{
 })
 
 
-const nav = document.getElementById('navDiv');
-let navTop = nav.offsetTop;
-
-function fixedNav() {
-  if (window.scrollY >= navTop) {    
-    nav.classList.add('fixed');
-  } else {
-    nav.classList.remove('fixed');    
-  }
-}
-
-window.addEventListener('scroll', fixedNav);
-
-var secondPmnt = document.getElementById("firstPay")
-
-
-
-var nameshow =  JSON.parse(localStorage.getItem("userData"))
-namesee()
-function namesee(){
- 
-    var username = document.getElementById("username")
-    username.innerHTML=nameshow.name
-
-}
-
-function gotohme(){
-  location.href="index.html"
-}
-
 
 </script>  
+
