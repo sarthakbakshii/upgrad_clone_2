@@ -20,7 +20,7 @@ const produtPageControler = require("./controllers/productpage.controler")
 app.use("/adminpanel",adminControler); 
 
 
-app.use("/home",homeCountroler);
+app.use("/",homeCountroler);
 app.use("/product",produtPageControler);
 
 app.use("/users",userController);
