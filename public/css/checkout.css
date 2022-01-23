@@ -45,6 +45,7 @@ body {
     width: 88%;
     height: 560px;
     margin-top: 28px;
+    margin: auto;
     /* margin-left: 55px; */
     background-color: white;
     border-radius: 5px;
@@ -52,12 +53,12 @@ body {
     display: flex;
     justify-content: space-evenly;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border: 1px solid blue;
+   
   }
   #payHead {
     width: 98%;
     height: 50px;
-    border: 1px solid green;
+   
     /* background-color: #333; */
     border-radius: 3px;
     color: black;

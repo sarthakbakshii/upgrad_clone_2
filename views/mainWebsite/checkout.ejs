@@ -175,9 +175,7 @@ document.getElementById("creditCard").addEventListener("click", () => {
   
 });
 
-function success() {
-location.href="thankyou.html"
-}
+
 document.getElementById("debitCard").addEventListener("click", () => {
    document.getElementById("optionSelect").innerHTML = "";
 
@@ -186,7 +184,7 @@ document.getElementById("debitCard").addEventListener("click", () => {
   document.getElementById(
     "optionSelect"
   ).innerHTML = ` <div id="displayPayment">
-  <div style="display: flex; height: 150px; width: 600px ;justify-content: space-evenly; margin-right:-50px;  " id="firstPayment">
+  <div style="display: flex; height: 150px; width:500px ;justify-content: space-evenly; margin-right:-50px;  " id="firstPayment">
       <div style="height:  110px; width: 200px; border: 1px solid rgb(223,225,230); border-radius: 15px;" id="credit"><h4>STANDARD CREDIT CARD EMI</h4>
       <p>(Zero Down Payment)</p>
       </div>
@@ -213,7 +211,7 @@ function displayCredit() {
   document.getElementById(
     "optionSelect"
   ).innerHTML = `  <div id="displayPayment">
-  <div  style="display: flex; height: 150px; width: 600px ;justify-content: space-evenly;  " id="firstPayment">
+  <div  style="display: flex; height: 150px; width:500px ;justify-content: space-evenly;  " id="firstPayment">
       <div id="firstPay" style="height:  110px; width: 200px; border: 1px solid rgb(223,225,230); border-radius: 15px;" id="credit"><h4>NO COST CREDIT CARD EMI</h4>
       <p>(Zero Down Payment)</p>
       </div>
@@ -254,7 +252,8 @@ document.getElementById("cash").addEventListener("click", () => {
 
 });
 // upi section starts here
-// document.getElementById("upi").addEventListener("click", () => {
+// document.getElementById("upi").addEventListener("click", () => 
+// {
 //   document.getElementById("optionSelect").innerHTML = "";
 //   window.location.href = `/order`
   
@@ -282,7 +281,7 @@ document.getElementById("cash").addEventListener("click", () => {
 // });
 function changecolor(){
   document.getElementById("btn-upi").style.backgroundColor="rgb(238,44,60)"
-  document.getElementById("btn-upi").setAttribute("onclick","success()")
+  // document.getElementById("btn-upi").setAttribute("onclick","success()")
 }
 
 document.getElementById("firstPay").addEventListener("click",()=>{
